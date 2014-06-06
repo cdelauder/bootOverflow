@@ -1,3 +1,5 @@
+<%= link_to 'Post a new question', new_question_path %>
+
 <%= @questions.each do |question| %>
   <h2><%= question.title  %></h2>
   <%= question.content  %>
