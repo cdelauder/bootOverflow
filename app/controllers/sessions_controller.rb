@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       redirect_to users_path
     else
       redirect_to new_session_path
+    end
   end
 
   def destroy
