@@ -8,4 +8,12 @@ class UsersController < ApplicationController
       redirect_to new_session_path
     end
   end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+
+  end
 end
