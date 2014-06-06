@@ -21,7 +21,15 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @question = Question.find(params[:id])
+    if current_user
+      @question.destroy
+      redirect_to questions_path
+    else
+      redirect_to new_sessions_path
+    end
+  end
 
 
   private
