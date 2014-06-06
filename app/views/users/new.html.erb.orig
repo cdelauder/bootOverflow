@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+<%= form_for @user do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :cohort %>
+<%= f.text_field :cohort %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit 'create account' %>
+<% end %>
+=======
 <h1>Create an Account</h1>
 
 <ul>
@@ -10,3 +27,4 @@
     <li><%= f.submit %></li>
 <% end %>
 </ul>
+>>>>>>> master

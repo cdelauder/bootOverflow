@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+<<<<<<< HEAD
   def index
     p session[:id]
     if session[:id]
@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     else
       redirect_to new_session_path
     end
+=======
+
+  def index
+>>>>>>> master
   end
 
   def new
@@ -15,6 +19,11 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+
+  end
+end
+=======
     p params[:user]
     @user = User.new params[:user]
 
@@ -28,3 +37,4 @@ class UsersController < ApplicationController
   end
 end
 
+>>>>>>> master
