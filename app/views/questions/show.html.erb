@@ -3,3 +3,5 @@
   created by <%= question.user.username %>
   <%= @question.content %>
 </p>
+
+<%= link_to 'Delete', delete_questions_path(@question) %>
