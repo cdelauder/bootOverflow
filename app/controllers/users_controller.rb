@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
   end
 
@@ -7,23 +8,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new params[:user]
-    if @user.save
-      redirect_to 'sessions#new'
-    else
-      render :new
+    p "in user create"
+    user_params = {
+      username: params[:user][:username],
+      email: params[:user][:email],
+      cohort: params[:user][:cohort],
+      password: params[:user][:password],
+    }
+
+    if params[:user][:password] == params[:user][:password_confirmation]
+      @user = User.new( user_params )
+      if @user.save
+        redirect_to users_path
+      else
+        render :new
+      end
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
+
