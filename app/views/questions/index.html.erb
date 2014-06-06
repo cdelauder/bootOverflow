@@ -1,0 +1,6 @@
+<%= @questions.each do |question| %>
+  <h2><%= question.title  %></h2>
+  <%= question.content  %>
+  <p>created by<%= question.user.username %></p>
+
+<% end %>
