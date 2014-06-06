@@ -1,4 +1,5 @@
 BootOverflow::Application.routes.draw do
-  resources :user, :only => [:index]
-  resources :session, :only => [:new, :create]
+  root 'users#index'
+  resources :users, :only => [:index]
+  resources :sessions, :only => [:new, :create]
 end
