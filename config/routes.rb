@@ -7,7 +7,14 @@ BootOverflow::Application.routes.draw do
   resources :users, :only => [:index, :new, :create]
 
   resources :questions do
+    resources :comments, only: [:index, :new, :create]
+
     resources :answers, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+
+  resources :answers do
+    resources :comments, only: [:index, :new, :create]
   end
 
   resources :sessions, :only => [:new, :create, :destroy]
