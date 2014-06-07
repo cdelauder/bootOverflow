@@ -2,11 +2,11 @@
 
 <ul>
 <%= form_for @user do |f| %>
-    <li><%= f.text_field :username, placeholder: 'username',value: 'a' %></li>
-    <li><%= f.text_field :email, placeholder: 'email',value: 'a@a.com' %></li>
-    <li><%= f.text_field :cohort, placeholder: 'cohort',value: 'a' %></li>
-    <li><%= f.password_field :password, placeholder: 'password',value: 'a' %></li>
-     <li><%= f.password_field :password_confirmation, placeholder: 'password_confirmation', value: 'a'%></li>
+    <li><%= f.text_field :username, placeholder: 'username' %></li>
+    <li><%= f.text_field :email, placeholder: 'email' %></li>
+    <li><%= f.text_field :cohort, placeholder: 'cohort' %></li>
+    <li><%= f.password_field :password, placeholder: 'password' %></li>
+     <li><%= f.password_field :password_confirmation, placeholder: 'password_confirmation' %></li>
     <li><%= f.submit %></li>
 <% end %>
 </ul>

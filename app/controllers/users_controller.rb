@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    p session[:id]
-    if session[:id]
-      @user = User.find(session[:id])
+    if current_user
+      @user = User.find(current_user)
       render 'index'
     else
       redirect_to new_session_path
@@ -15,16 +14,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params[:user]
     @user = User.new params[:user]
-
     if @user.save
 
-      redirect_to users_path
+      redirect_to root_path
     else
        p "errors #{@user.errors.full_messages}"
       render :new
     end
   end
+
+  private
+
+  # def user_params
+  #   params.require(:user).permit(:username, :email, :cohort, :password_digest, :password_confirmation)
+  # end
 end
 

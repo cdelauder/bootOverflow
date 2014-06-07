@@ -13,7 +13,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params, user_id: current_user)
+    @user = User.find(current_user)
+    @question = @user.questions.new(params[:question])
     if @question.save
       redirect_to questions_path(@question)
     else
@@ -29,13 +30,6 @@ class QuestionsController < ApplicationController
     else
       redirect_to new_sessions_path
     end
-  end
-
-
-  private
-
-  def question_params
-    params.require(:question).permit(:title, :content)
   end
 
 end
