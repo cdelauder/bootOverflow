@@ -4,6 +4,13 @@ class UsersController < ApplicationController
     if current_user
       @user = User.find(current_user)
       @questions = @user.questions
+
+      @answer = []
+
+      @questions.each do |question|
+        @answer << question.answers.count
+      end
+
       render 'index'
     else
       redirect_to new_session_path

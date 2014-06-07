@@ -2,7 +2,7 @@
 
 <div class="stats">
 <h2>Total Questions: <small><%= @questions.length %></small></h2>
-<h2>Total Responses: <small></small></h2>
+<h2>Total Answers: <small><%= @answer.inject(:+) %></small></h2>
 <h2>Total Comments: <small></small></h2>
 <h2>Total Points: <small></small></h2>
 </div>

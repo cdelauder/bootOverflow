@@ -4,6 +4,7 @@
 <br>
 
 <% @questions.each do |question| %>
+<p><%= '*'*100 %></p>
 <div class="questions">
   <h2><%= question.title  %>:
     <span>
@@ -12,8 +13,19 @@
       <%= link_to 'Edit', edit_question_path(question) %>
     </span>
   </h2>
-  <h3><%= question.content  %><span> <%= link_to 'Comment', edit_question_path(question) %></span></h3>
-  <br>
+  <h3><%= question.content  %><span> <%= link_to 'Answer', new_question_answer_path(question, @answer) %></span></h3>
 </div>
+<p><%= '*'*100 %></p>
+
+<!-- Creating the list of comments -->
+<% question.answers.each do |answer| %>
+<div class="answers">
+  <p><%= answer.content %>
+    <span>
+
+    </span>
+  </p>
+</div>
+<% end %>
 
 <% end %>

@@ -1,0 +1,6 @@
+<h1>Answer</h1>
+
+<%= form_for [@question, @answer] do |f| %>
+ <%= f.text_area :content, placeholder: 'write your answer' %>
+ <%= f.submit %>
+<% end %>
