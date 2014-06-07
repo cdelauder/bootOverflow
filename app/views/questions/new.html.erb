@@ -1,3 +1,5 @@
+<%= link_to 'log out', session_path(current_user), :method => :delete %>
+<br>
 <%= form_for @question do |f|%>
   <%= f.label :title %>
   <%= f.text_field :title, :placeholder => 'title' %>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     if current_user
       @user = User.find(current_user)
+      @questions = @user.questions
       render 'index'
     else
       redirect_to new_session_path
