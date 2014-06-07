@@ -1,5 +1,4 @@
-<%= link_to 'log out', session_path(current_user), :method => :delete %>
-<br>
+<h1>Create Questions</h1>
 <%= form_for @question do |f|%>
   <%= f.label :title %>
   <%= f.text_field :title, :placeholder => 'title' %>
