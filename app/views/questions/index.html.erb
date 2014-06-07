@@ -1,3 +1,6 @@
+<%= link_to 'log out', session_path(current_user), :method => :delete %>
+<br>
+
 <%= link_to 'Post a new question', new_question_path %>
 
 <% @questions.each do |question| %>
