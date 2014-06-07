@@ -4,11 +4,6 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
-  def show
-    @question = Question.find(params[:id])
-
-  end
-
   def new
     @question = Question.new
   end
@@ -17,7 +12,7 @@ class QuestionsController < ApplicationController
     @user = User.find(current_user)
     @question = @user.questions.new(params[:question])
     if current_user && @question.save
-      redirect_to question_path(@question)
+      redirect_to questions_path
     else
       render :new
     end
@@ -40,7 +35,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if current_user && @question.update_attributes(params[:question])
-      redirect_to question_path(@question)
+      redirect_to questions_path
     else
       redirect_to new_sessions_path
     end
