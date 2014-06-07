@@ -4,6 +4,6 @@ BootOverflow::Application.routes.draw do
   get 'log_out' => 'sessions#destroy', :as => 'log_out'
   root :to => 'users#index'
   resources :users, :only => [:index, :new, :create]
-  resources :questions, :only => [:index, :show, :new, :create, :destroy]
+  resources :questions
   resources :sessions, :only => [:new, :create, :destroy]
 end
