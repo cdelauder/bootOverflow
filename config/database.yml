@@ -1,11 +1,8 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
 development:
   adapter: postgresql
   host: localhost
+  username:
+  password:
   database: boot_overflow_dev
   pool: 5
   timeout: 5000
@@ -16,13 +13,17 @@ development:
 test:
   adapter: postgresql
   host: localhost
-  database: boot_overflow_test
+  username:
+  password:
+  database: boot_overflowtest
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
   host: localhost
+  username:
+  password:
   database: boot_overflow
   pool: 5
   timeout: 5000

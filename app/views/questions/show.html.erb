@@ -1,0 +1,9 @@
+<h2><%= @question.title %></h2>
+<p>
+  created by <%= @question.user.username %>
+  <br>
+  <br>
+  <%= @question.content %>
+</p>
+
+<%= link_to 'Delete', question_path(@question), :method => :delete %>
