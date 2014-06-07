@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
   before_filter :load_commentable
 
-  def index
-    @comments = @commentable.comments
+   def new
+    @comment = @commentable.comments.new
+   end
+
+  def create
+    @comment = @commentable.comments.new params[:comment]
+    if @comment.save
+      redirect_to questions_path
+    else
+      render :new
+    end
   end
 
   private
@@ -12,5 +21,4 @@ class CommentsController < ApplicationController
     p resource
     @commentable = resource.singularize.classify.constantize.find(id)
   end
-
 end

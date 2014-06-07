@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140607212121) do
   end
 
   create_table "comments", force: true do |t|
-    t.text     "content"
+    t.text     "body"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.datetime "created_at"

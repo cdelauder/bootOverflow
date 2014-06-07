@@ -1,0 +1,6 @@
+<h1>Post a Comment to a Question</h1>
+
+<%= form_for [@commentable, @comment] do |f| %>
+  <%= f.text_area :body, placeholder: 'enter a comment' %>
+  <%= f.submit %>
+<% end %>
