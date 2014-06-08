@@ -8,15 +8,21 @@ BootOverflow::Application.routes.draw do
     resources :comments, only: [:index, :new, :create]
   end
 
+  concern :votable do
+    resources :votes, only: [:index, :new, :create, :destroy]
+  end
+
   resources :users, :only => [:index, :new, :create]
 
   resources :questions do
     concerns :commentable
+    concerns :votable
     resources :answers, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :answers do
     concerns :commentable
+    concerns :votable
   end
 
   resources :sessions, :only => [:new, :create, :destroy]
