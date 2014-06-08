@@ -9,6 +9,13 @@
   <div class="answer-comment">
     <%= link_to 'respond', new_question_answer_path(@question) %>
     <%= link_to 'comment', new_question_comment_path(@question) %>
+    <div class="voting-controls">
+      <%= link_to '+', question_votes_path(@question), :method => :post %>
+      <%= @question.votes.length %>
+      <%= link_to '-', question_vote_path(@question, @question.votes.last), :method => :delete %>
+    </div>
+
+
   </div>
 
   <% @question.comments.each do |comment| %>

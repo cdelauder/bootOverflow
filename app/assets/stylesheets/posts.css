@@ -123,3 +123,12 @@
   border: dotted red;
 }
 
+.voting-controls {
+  font-size: 1.5em;
+  float: right;
+}
+
+.voting-controls a {
+  margin-left: 8px;
+}
+
