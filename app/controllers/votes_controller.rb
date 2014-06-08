@@ -8,20 +8,21 @@ class VotesController < ApplicationController
 
   def create
     @vote = @votable.votes.new params[:vote]
-    if @vote.save
-      redirect_to questions_path
+    if current_user && @vote.save
+      redirect_to question_path(params[:question_id])
     else
-      render :new
+      redirect_to question_path(params[:question_id])
     end
   end
 
   def destroy
-    @vote = @votable.votes.find(params[:votable_id])
+    p params
+    @vote = @votable.votes.find(params[:id])
     if current_user
       @vote.destroy
-      render :new
+      redirect_to question_path(params[:question_id])
     else
-      render :new
+      redirect_to question_path(params[:question_id])
     end
   end
 
