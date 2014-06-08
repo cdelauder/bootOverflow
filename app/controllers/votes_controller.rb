@@ -7,18 +7,38 @@ class VotesController < ApplicationController
 
   def create
     @vote = @votable.votes.new params[:vote]
-    params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
-    if current_user && @vote.save
-      render :partial => 'question_comments', :locals => {:id => id}
+
+    if params[:question_id]
+      @question = Question.find(params[:question_id])
+      if current_user && @vote.save
+        render :partial => 'votes/votes_questions', :locals => {:question => @question}
+      end
+    end
+
+    if params[:answer_id]
+      @answer = Answer.find(params[:answer_id])
+      if current_user && @vote.save
+        render :partial => 'votes/votes_answers', :locals => {:answer => @answer}
+      end
     end
   end
 
   def destroy
     @vote = @votable.votes.find(params[:id])
-    params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
-    if current_user
-      @vote.destroy
-      render :partial => 'question_comments', :locals => {:id => id}
+    if params[:question_id]
+      @question = Question.find(params[:question_id])
+      if current_user
+        @vote.destroy
+        render :partial => 'votes/votes_questions', :locals => {:question => @question}
+      end
+    end
+
+    if params[:answer_id]
+      @answer = Answer.find(params[:answer_id])
+      if current_user
+        @vote.destroy
+        render :partial => 'votes/votes_answers', :locals => {:answer => @answer}
+      end
     end
   end
 
