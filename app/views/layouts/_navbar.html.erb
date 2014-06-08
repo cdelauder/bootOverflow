@@ -1,3 +1,5 @@
-<%= link_to 'Profile', root_path %>
-<%= link_to 'Questions', questions_path %>
-<%= link_to 'log out', session_path(current_user), :method => :delete %>
+<div class="navbar">
+  <%= link_to 'Profile', root_path %>
+  <%= link_to 'Questions', questions_path %>
+  <%= link_to 'Sign Out', session_path(current_user), :method => :delete, id: 'logout' %>
+</div>

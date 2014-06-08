@@ -8,7 +8,15 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new params[:comment]
     if @comment.save
-      redirect_to questions_path
+      if params[:question_id]
+        question = Question.find params[:question_id]
+        redirect_to question_path(question)
+      else
+        answer = Answer.find params[:answer_id]
+
+        question = Question.find(Answer.find(params[:answer_id]).question_id)
+        redirect_to question_path(question)
+      end
     else
       render :new
     end

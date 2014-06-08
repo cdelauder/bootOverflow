@@ -1,8 +1,6 @@
-<h1>Edit <%= @question.title %></h1>
+<h1 class="page-header">Edit: <%= @question.title %></h1>
 <%= form_for @question do |f|%>
-  <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <%= f.submit 'submit' %>
+  <%= f.text_area :content, rows: 25, cols: 47 %>
+  <%= f.submit 'submit', id: 'submit' %>
 <% end %>

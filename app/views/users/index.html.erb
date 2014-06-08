@@ -1,8 +1,8 @@
-<h1>Welcome <%= @user.username.capitalize %></h1>
+<h1 class="page-header">Dev Overflow</h1>
 
 <div class="stats">
-<h2>Total Questions: <small><%= @questions.length %></small></h2>
-<h2>Total Answers: <small><%= @answer.inject(:+) %></small></h2>
-<h2>Total Comments: <small></small></h2>
-<h2>Total Points: <small></small></h2>
+<h2>Questions: <span><%= @questions.length %></span></h2>
+<h2>Answers: <span><%= @answer.inject(:+) %></span></h2>
+<h2>Comments: <span><%= @comments.inject(:+) %></span></h2>
+<h2>Points: <span></span></h2>
 </div>
