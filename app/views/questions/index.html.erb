@@ -1,54 +1,7 @@
-<h1>Your Questions</h1>
-<%= link_to 'Post a new question', new_question_path %>
-<br>
-<br>
+<h1 class="page-header">Query List</h1>
 
-<% @questions.each do |question| %>
-<p><%= '*'*100 %></p>
-<div class="questions">
-  <h2><%= question.title  %>:
-    <span>
-      created by <%= question.user.username %>
-      <%= link_to 'Delete', question_path(question), :method => :delete %>
-      <%= link_to 'Edit', edit_question_path(question) %>
-    </span>
-  </h2>
-  <h3><%= question.content  %>
-    <span>
-       <%= link_to 'Answer', new_question_answer_path(question) %>
-       <%= link_to 'Comment', new_question_comment_path(question) %>
-    </span>
-  </h3>
-
-  <% question.comments.each do |comment| %>
-  <div class="question-comments">
-    <p><%= comment.body %></p>
-  </div>
-  <% end %>
+<div class="ask-button">
+  <%= link_to 'ask a boot', new_question_path %>
 </div>
-<p><%= '*'*100 %></p>
 
-
-
-<!-- Creating the list of comments -->
-<% question.answers.each do |answer| %>
-<div class="answers">
-  <p><%= answer.content %>
-    <span>
-      <%= link_to "Comment", new_answer_comment_path(answer) %>
-      <%= link_to "edit", edit_question_answer_path(question, answer) %>
-      <%= link_to "delete", question_answer_path(question, answer), :method => :delete %>
-    </span>
-  </p>
-
-
-  <% answer.comments.each do |comment| %>
-  <div class="answer-comments">
-    <p><%= comment.body %></p>
-  </div>
-  <% end %>
-
-</div>
-<% end %>
-
-<% end %>
+<%= render 'questions' %>

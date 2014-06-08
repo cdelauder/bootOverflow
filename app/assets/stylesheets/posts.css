@@ -1,0 +1,125 @@
+
+.ask-button{
+  width: 10%;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: solid #5b9746 ;
+  padding: 5px;
+  background-color: #6ab353;
+}
+
+.ask-button:hover{
+  border-bottom: solid #6ab353 ;
+  background-color: #75c95c;
+}
+
+.ask-button a{
+  text-decoration: none;
+  color: white;
+}
+
+/* question container */
+.question-container{
+  width: 80%;
+  margin: 50px auto;
+  text-align: center;
+  border: solid white;
+  background-image: url('groovepaper.png');
+}
+
+.question-container ul {
+  list-style: none
+}
+
+.question-container ul li {
+  padding: 20px;
+}
+
+
+.question-container ul li a{
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 2em;
+  color: #646464;
+}
+
+.question-container ul li a:hover{
+  color: #8f8f8f;
+}
+
+.question-content{
+  width: 80%;
+  margin: 50px auto;
+  border: solid white;
+  padding: 20px;
+  background-image: url('groovepaper.png');
+  color: #484848;
+  font-family: 'Bitter', serif;
+}
+
+.content-header{
+  text-align: center;
+  font-family: 'Bitter', serif;
+  color: #9c9c9c;
+  text-transform: capitalize;
+}
+
+.content-header{
+  border-bottom: solid #c2c2c2;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.delete-edit{
+  text-align: right;
+}
+
+.delete-edit a{
+  text-decoration: none;
+  color: #1f1f1f;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.delete-edit a:hover{
+  text-decoration: none;
+  color: #6e6e6e;
+}
+
+.answer-comment{
+  border-bottom: solid #c2c2c2;
+  padding-bottom: 15px;
+}
+.answer-comment a{
+  text-decoration: none;
+  color: #1f1f1f;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.answer-comment a:hover{
+  text-decoration: none;
+  color: #6e6e6e;
+}
+
+.question-comments-box{
+  margin-top: 10px;
+  margin-left: 50px;
+  background-color: #d0d0d0;
+  padding: 20px;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1em;
+}
+
+#responses{
+  padding-bottom: 15px;
+  border-bottom: solid #383838;;
+}
+
+.response-content{
+  margin-top: 50px;
+  margin-left: 50px;
+  border: dotted red;
+}
+

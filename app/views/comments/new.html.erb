@@ -1,6 +1,6 @@
-<h1>Post a Comment to a Question</h1>
+<h1 class="page-header">Comment It</h1>
 
 <%= form_for [@commentable, @comment] do |f| %>
-  <%= f.text_area :body, placeholder: 'enter a comment' %>
-  <%= f.submit %>
+  <%= f.text_area :body, placeholder: 'enter a comment', rows: 25, cols: 47 %>
+  <%= f.submit 'submit' , id: 'submit' %>
 <% end %>

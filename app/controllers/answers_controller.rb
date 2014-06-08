@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
     @question = Question.find params[:question_id]
     @answer = @question.answers.new params[:answer]
     if @answer.save
-      redirect_to questions_path
+      redirect_to question_path(@question)
     else
       render :new
     end
@@ -24,7 +24,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.find params[:id]
 
     if @answer.update_attributes params[:answer]
-      redirect_to questions_path
+      redirect_to question_path(@question)
     else
       render :edit
     end
@@ -38,6 +38,6 @@ class AnswersController < ApplicationController
     answer = question.answers.find params[:id]
 
     answer.destroy
-    redirect_to questions_path
+    redirect_to question_path(question)
   end
 end
