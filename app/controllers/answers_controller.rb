@@ -31,9 +31,6 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    p params[:question_id]
-    p params[:id]
-
     question = Question.find params[:question_id]
     answer = question.answers.find params[:id]
 
