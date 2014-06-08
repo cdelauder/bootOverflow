@@ -12,7 +12,9 @@
     <div class="voting-controls">
       <%= link_to '+', question_votes_path(@question), :method => :post %>
       <%= @question.votes.length %>
-      <%= link_to '-', question_vote_path(@question, @question.votes.last), :method => :delete %>
+      <% if @question.votes.length > 0 %>
+        <%= link_to '-', question_vote_path(@question, @question.votes.last), :method => :delete %>
+      <% end %>
     </div>
 
 

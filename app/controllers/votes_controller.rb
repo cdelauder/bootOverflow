@@ -3,12 +3,12 @@ class VotesController < ApplicationController
 
   def new
     @vote = @votable.votes.new
-    p @vote
   end
 
   def create
     @vote = @votable.votes.new params[:vote]
-    params[:question_id] ? id = params[:question_id] : id = params[:answer_id]
+    p @vote
+    params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
     if current_user && @vote.save
       redirect_to question_path(id)
     else
@@ -18,7 +18,7 @@ class VotesController < ApplicationController
 
   def destroy
     @vote = @votable.votes.find(params[:id])
-    params[:question_id] ? id = params[:question_id] : id = params[:answer_id]
+    params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
     if current_user
       @vote.destroy
       redirect_to question_path(id)
