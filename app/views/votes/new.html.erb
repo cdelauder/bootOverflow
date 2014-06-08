@@ -1,3 +1,3 @@
-<p>UpVote<!-- (link_to create a vote) --></p>
+<%= link_to '+', [@votable, @vote], :method => :post %>
 <p>NumVotes<!-- (link_to show votes given parameters?) --></p>
-<p>DownVote<!-- (link_to delete a vote) --></p>
+<%= link_to '-', [@votable, @vote], :method => :delete %>

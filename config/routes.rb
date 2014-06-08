@@ -9,7 +9,7 @@ BootOverflow::Application.routes.draw do
   end
 
   concern :votable do
-    resources :votes, only: [:index, :new, :create, :destroy]
+    resources :votes, only: [:new, :create, :destroy]
   end
 
   resources :users, :only => [:index, :new, :create]
