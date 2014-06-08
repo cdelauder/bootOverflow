@@ -9,13 +9,8 @@
   <div class="answer-comment">
     <%= link_to 'respond', new_question_answer_path(@question) %>
     <%= link_to 'comment', new_question_comment_path(@question) %>
-    <div class="voting-controls">
-      <%= link_to '+', question_votes_path(@question), :method => :post, remote: true %>
-      <%= @question.votes.length %>
-      <% if @question.votes.length > 0 %>
-        <%= link_to '-', question_vote_path(@question, @question.votes.last), :method => :delete, remote: true %>
-      <% end %>
-    </div>
+
+    <%= render :partial => 'votes/votes_questions', :locals => {:question => @question} %>
 
 
   </div>

@@ -9,9 +9,7 @@ class VotesController < ApplicationController
     @vote = @votable.votes.new params[:vote]
     params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
     if current_user && @vote.save
-      redirect_to question_path(id)
-    else
-      redirect_to question_path(id)
+      render :partial => 'question_comments', :locals => {:id => id}
     end
   end
 
@@ -20,9 +18,7 @@ class VotesController < ApplicationController
     params[:question_id] ? id = params[:question_id] : id = Answer.find(params[:answer_id]).question_id
     if current_user
       @vote.destroy
-      redirect_to question_path(id)
-    else
-      redirect_to question_path(id)
+      render :partial => 'question_comments', :locals => {:id => id}
     end
   end
 
