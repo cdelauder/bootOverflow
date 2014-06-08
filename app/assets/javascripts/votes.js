@@ -6,10 +6,10 @@ $(document).ready(function(){
 var increaseVote = function(e, data, xhr, status) {
   debugger
   e.preventDefault()
-  $(this).append(data)
+  $(this).html(data)
 }
 
 var decreaseVote = function(e, data, xhr, status) {
   e.preventDefault()
-  $(this).append(data)
+  $(this).html(data)
 }

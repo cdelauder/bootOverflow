@@ -6,15 +6,9 @@
     </div>
       <h3><%= answer.content %></h3>
     <div class="answer-comment">
-
       <%= link_to 'comment', new_answer_comment_path(answer) %>
-
       <div class="voting-controls">
-        <%= link_to '+', answer_votes_path(answer), :method => :post, remote: true, :class => "upvote" %>
-        <%= answer.votes.length %>
-        <% if answer.votes.length > 0 %>
-          <%= link_to '-', answer_vote_path(answer, answer.votes.last), :method => :delete, remote: true, :class => "downvote" %>
-        <% end %>
+        <%= render :partial => 'votes/votes_questions', :locals => {:question => @question} %>
       </div>
     </div>
 

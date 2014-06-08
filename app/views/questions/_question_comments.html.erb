@@ -9,10 +9,9 @@
   <div class="answer-comment">
     <%= link_to 'respond', new_question_answer_path(@question) %>
     <%= link_to 'comment', new_question_comment_path(@question) %>
-
-    <%= render :partial => 'votes/votes_questions', :locals => {:question => @question} %>
-
-
+    <div class="voting-controls">
+      <%= render :partial => 'votes/votes_questions', :locals => {:question => @question} %>
+    </div>
   </div>
 
   <% @question.comments.each do |comment| %>
