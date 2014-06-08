@@ -1,6 +1,6 @@
-<h1>Answer</h1>
+<h1 class="page-header">Answer A Boot</h1>
 
 <%= form_for [@question, @answer] do |f| %>
- <%= f.text_area :content, placeholder: 'write your answer' %>
- <%= f.submit %>
+ <%= f.text_area :content, placeholder: 'write your answer' , rows: 25, cols: 47 %>
+ <%= f.submit 'submit', id: 'submit' %>
 <% end %>

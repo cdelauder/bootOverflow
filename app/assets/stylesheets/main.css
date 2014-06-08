@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Bitter|Oxygen);
+/*
+font-family: 'Bitter', serif;
+font-family: 'Oxygen', sans-serif;
+*/
+body{
+  background-color: #efefef
+}
+
+/* navbar */
+.navbar{
+  background-color: #517be0;
+  padding: 10px;
+}
+.navbar a{
+  text-decoration: none;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.navbar a:hover{
+  color: #93cdff;
+}
+#logout{
+  float: right;
+}
+
+.page-header{
+  text-align: center;
+  font-family: 'Bitter', serif;
+  color: #383838;
+  text-transform: capitalize;
+}
+
+.stats{
+  background-image: url('groovepaper.png');
+  width: 80%;
+  margin: 0 auto;
+  border: solid white;
+}
+
+.stats h2{
+  margin: 10px;
+  padding: 5px;
+  font-family: 'Oxygen', sans-serif;
+  color: #d4d4d4;
+}
+
+.stats span{
+  color: #898989;
+}
+
+form{
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+form input, textarea{
+  width: 90%;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+}
+
+#submit{
+  width: 90%;
+  color: white;
+  border-bottom: solid #5b9746 ;
+  padding: 5px;
+  background-color: #6ab353;
+}
+
+#submit:hover{
+  border-bottom: solid #6ab353 ;
+  background-color: #75c95c;
+}
+

@@ -1,12 +1,12 @@
-<h1>Create an Account</h1>
+<h1 class="page-header">Create an Account</h1>
 
 <ul>
 <%= form_for @user do |f| %>
-    <li><%= f.text_field :username, placeholder: 'username' %></li>
-    <li><%= f.text_field :email, placeholder: 'email' %></li>
-    <li><%= f.text_field :cohort, placeholder: 'cohort' %></li>
-    <li><%= f.password_field :password, placeholder: 'password' %></li>
-     <li><%= f.password_field :password_confirmation, placeholder: 'password_confirmation'%></li>
-    <li><%= f.submit %></li>
+    <%= f.text_field :username, placeholder: 'username' %>
+    <%= f.text_field :email, placeholder: 'email' %>
+    <%= f.text_field :cohort, placeholder: 'cohort' %>
+    <%= f.password_field :password, placeholder: 'password' %>
+     <%= f.password_field :password_confirmation, placeholder: 'password_confirmation'%>
+    <%= f.submit 'Create an Account', id: 'submit' %>
 <% end %>
 </ul>

@@ -1,0 +1,19 @@
+<div class="question-content">
+  <div class="delete-edit">
+    <%= link_to 'edit', edit_question_path(@question) %>
+    <%= link_to 'delete', question_path(@question), :method => :delete %>
+  </div>
+
+  <h1 class="content-header"><%= @question.title %></h1>
+  <h3><%= @question.content %></h3>
+  <div class="answer-comment">
+    <%= link_to 'respond', new_question_answer_path(@question) %>
+    <%= link_to 'comment', new_question_comment_path(@question) %>
+  </div>
+
+  <% @question.comments.each do |comment| %>
+    <div class="question-comments-box">
+      <h3><%= comment.body %></h3>
+    </div>
+  <% end %>
+</div>

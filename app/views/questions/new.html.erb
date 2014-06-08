@@ -1,8 +1,6 @@
-<h1>Create Questions</h1>
+<h1 class="page-header">Create Questions</h1>
 <%= form_for @question do |f|%>
-  <%= f.label :title %>
-  <%= f.text_field :title, :placeholder => 'title' %>
-  <%= f.label :content %>
-  <%= f.text_field :content, :placeholder => 'content' %>
-  <%= f.submit 'submit' %>
+  <%= f.text_field :title, :placeholder => 'topic' %>
+  <%= f.text_area :content, :placeholder => 'Ask your question...', rows: 25, cols: 47 %>
+  <%= f.submit 'submit', id: 'submit' %>
 <% end %>
