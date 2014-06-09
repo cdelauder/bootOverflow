@@ -1,15 +1,14 @@
 $(document).ready(function(){
-  $('.upvote').on('ajax:success', increaseVote)
-  $('.downvote').on('ajax:success', decreaseVote)
+  $(".voting-controls").on('ajax:success', '.upvote', increaseVote)
+  $(".voting-controls").on('ajax:success', '.downvote', decreaseVote)
 });
 
 var increaseVote = function(e, data, xhr, status) {
-  debugger
   e.preventDefault()
-  $(this).html(data)
+  $(this.parentElement).html(data)
 }
 
 var decreaseVote = function(e, data, xhr, status) {
   e.preventDefault()
-  $(this).html(data)
+  $(this.parentElement).html(data)
 }

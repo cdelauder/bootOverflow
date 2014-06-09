@@ -1,5 +1,5 @@
 <%= link_to '+', answer_votes_path(answer), :method => :post, remote: true, :class => "upvote" %>
-<%= answer.votes.length %>
+<span class="vote-count"><%= answer.votes.length %></span>
 <% if answer.votes.length > 0 %>
   <%= link_to '-', answer_vote_path(answer, answer.votes.last), :method => :delete, remote: true, :class => "downvote" %>
 <% end %>

@@ -8,7 +8,7 @@
     <div class="answer-comment">
       <%= link_to 'comment', new_answer_comment_path(answer) %>
       <div class="voting-controls">
-        <%= render :partial => 'votes/votes_questions', :locals => {:question => @question} %>
+        <%= render :partial => 'votes/votes_answers', :locals => {:answer => answer} %>
       </div>
     </div>
 
