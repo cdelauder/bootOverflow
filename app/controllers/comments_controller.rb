@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
         redirect_to question_path(question)
       else
         answer = Answer.find params[:answer_id]
-
         question = Question.find(Answer.find(params[:answer_id]).question_id)
         redirect_to question_path(question)
       end
