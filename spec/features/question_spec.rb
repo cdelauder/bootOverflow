@@ -1,11 +1,10 @@
 require 'spec_helper'
 
-feature 'A user can create a question by clicking a link on the question index' do
+feature 'A user can create a question by clicking a link on the question index', js: true do
   it 'create should have a form a user can fill out to post a question' do
-    user = User.create(name: 'bob')
-    current_user.stub(:current_user) {user}
-    visit '/questions'
-    click_on 'Post a new question'
+    login
+    visit questions_path
+    click_on 'ask a boot'
     fill_in 'question_title', :with => "i don't know"
     fill_in 'question_content', :with => "please tell me things"
     click_on 'submit'
