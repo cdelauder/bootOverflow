@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new params[:comment]
     if @comment.save
+      # CR add a private method to do this - similar to load_commentable
       if params[:question_id]
         question = Question.find params[:question_id]
         redirect_to question_path(question)

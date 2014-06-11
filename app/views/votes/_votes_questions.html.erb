@@ -1,3 +1,5 @@
+<!-- CR send the path in locals then you can use one partial for answervotes and comment votes -->
+
 <%= link_to '+', question_votes_path(@question), :method => :post, remote: true, :class => "upvote" %>
 <span class="vote-count"><%= @question.votes.length %></span>
 <% if @question.votes.length > 0 %>

@@ -11,7 +11,7 @@
         <%= render :partial => 'votes/votes_answers', :locals => {:answer => answer} %>
       </div>
     </div>
-
+<!-- CR make sure you are using includes in your controller to avoid hitting the database fore each comment -->
     <% answer.comments.each do |comment| %>
       <div class="question-comments-box">
         <h3><%= comment.body %></h3>

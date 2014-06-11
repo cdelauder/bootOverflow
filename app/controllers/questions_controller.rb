@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
 
   def create
     @user = User.find(current_user)
+    # CR @question = current_user.questions.build
     @question = @user.questions.new(params[:question])
     if current_user && @question.save
       redirect_to question_path(@question)
@@ -24,7 +25,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if current_user
+    if current_user  # CR this is unneccessary if you use a before filter for authentication
       @question.destroy
       redirect_to questions_path
     else

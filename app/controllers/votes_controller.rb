@@ -7,6 +7,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = @votable.votes.new params[:vote]
+    # CR use a single partial and create a private controller method to determine Question or Answer
     p params
     if params[:question_id]
       @question = Question.find(params[:question_id])

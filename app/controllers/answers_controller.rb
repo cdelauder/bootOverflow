@@ -1,4 +1,8 @@
 class AnswersController < ApplicationController
+  before do
+    @question = Question.find params[:question_id]
+
+  end
   def new
     @question = Question.find params[:question_id]
     @answer = @question.answers.new

@@ -1,6 +1,7 @@
 <h1 class="page-header">Dev Overflow</h1>
 
 <div class="stats">
+  <!-- CR clean up your controller using includes to be able to remove the inject logic here and just use answer.count -->
 <h2>Questions: <span><%= @questions.length %></span></h2>
 <h2>Answers: <span><%= @answer.inject(:+) %></span></h2>
 <h2>Comments: <span><%= @comments.inject(:+) %></span></h2>

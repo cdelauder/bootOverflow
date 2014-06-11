@@ -49,7 +49,7 @@ gem 'bcrypt-ruby', '3.1.2'
  gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~>2.14.1'
   gem 'factory_girl_rails'
   gem 'faker'
 end
@@ -59,6 +59,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'faker'
 end
