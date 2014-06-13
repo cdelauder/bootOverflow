@@ -6,8 +6,7 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = @votable.votes.new params[:vote]
-    p params
+    @vote = @votable.votes.new votes_params
     if params[:question_id]
       @question = Question.find(params[:question_id])
       if current_user && @vote.save
@@ -22,7 +21,7 @@ class VotesController < ApplicationController
   end
 
   def destroy
-    @vote = @votable.votes.find(params[:id])
+    @vote = @votable.votes.find(votes_params)
     if params[:question_id]
       @question = Question.find(params[:question_id])
       if current_user
@@ -44,6 +43,10 @@ class VotesController < ApplicationController
     resource, id = request.path.split('/')[1, 2]
     p resource
     @votable = resource.singularize.classify.constantize.find(id)
+  end
+
+  def votes_params
+    params.require(:vote).permit(:vote)
   end
 
 end

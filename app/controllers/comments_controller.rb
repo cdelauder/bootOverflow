@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
    end
 
   def create
-    @comment = @commentable.comments.new params[:comment]
+    @comment = @commentable.comments.new comment_params
     if @comment.save
       if params[:question_id]
         question = Question.find params[:question_id]
@@ -27,5 +27,9 @@ class CommentsController < ApplicationController
     resource, id = request.path.split('/')[1, 2]
     p resource
     @commentable = resource.singularize.classify.constantize.find(id)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:body)
   end
 end
